@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人网页</title>
+    <style>
+        body {
+            font-family: "SimHei", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('file:///E:/桌面/大作业/测试/测试3.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        section {
+            margin: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        h1, h2, h3 {
+            color: #fff;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .profile-pic {
+            width: 150px;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: block;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #4CAF50;
+        }
+        .fade {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .fade.in {
+            opacity: 1;
+        }
+        @media (max-width: 600px) {
+            header, section {
+                padding: 10px;
+                margin: 10px;
+            }
+            .container {
+                padding: 0 10px;
+            }
+            .profile-pic {
+                width: 100px;
+            }
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>欢迎来到我的个人网页</h1>
+    </header>
+    <nav>
+        <a href="#about" onclick="smoothScroll('#about')">关于我</a>
+        <a href="#skills" onclick="smoothScroll('#skills')">我的技能</a>
+        <a href="#works" onclick="smoothScroll('#works')">我的作品</a>
+        <a href="#contact" onclick="smoothScroll('#contact')">联系我</a>
+    </nav>
+    <section id="about" class="container fade">
+        <h2>关于我</h2>
+        <img src="file:///E:/桌面/大作业/测试/我的照片1.jpg" alt="我的照片" class="profile-pic">
+        <p>你好，我是张晨曦。这是我的个人网页，在这里你可以了解更多关于我的信息。</p>
+    </section>
+    <section id="skills" class="container fade">
+        <h2>我的技能</h2>
+        <ul>
+            <li>技能一：精通各种色图搜集，各大里番观看爱好者</li>
+            <li>技能二：熟悉各种编程语言，包括Python、Java、JavaScript、HTML、CSS等</li>
+            <li>技能三：擅长使用各种办公软件，包括Word、Excel、PowerPoint、Visio等</li>
+        </ul>
+    </section>
+    <section id="works" class="container fade">
+        <h2>我的作品</h2>
+        <p>这里展示一些我的作品。</p>
+        <div>
+            <img src="file:///E:/桌面/大作业/测试/测试1.jpg" alt="作品1" style="width:100%; height:auto;">
+            <img src="file:///E:/桌面/大作业/测试/测试2.jpg" alt="作品2" style="width:100%; height:auto;">
+        </div>
+    </section>
+    <section id="contact" class="container fade">
+        <h2>联系我</h2>
+        <p>你可以通过以下方式联系我：</p>
+        <ul>
+            <li>电子邮件: 3163197457@qq.com</li>
+            <li>手机号码: 13812345678</li>
+            <li>刺激网站: <a href="https://www.gfbzb.gov.cn/index.jsp">点击这里</a></li>
+            <li>学习资料: <a href="https://yz.chsi.com.cn/">点击这里</a></li>
+        </ul>
+    </section>
+    <script>
+        function smoothScroll(target) {
+            document.querySelectorAll('.container').forEach(el => el.classList.remove('in'));
+            document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => document.querySelector(target).classList.add('in'), 500);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.container').forEach(el => el.classList.add('in'));
+        });
+    </script>
+</body>
+</html>
